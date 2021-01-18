@@ -11,6 +11,11 @@ body {
     font-weight: 300;
 }
 
+#container {
+    height: 550px;
+    margin-left: 25px;
+}
+
 .memory-game {
   width: 640px;
   height: 640px;
@@ -36,14 +41,24 @@ body {
     transform: scale(0.97);
    transition: transform .2s;
  }  
-
-.front, .back {
+ 
+.back {
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 0;
   position: absolute;
   border-radius: 5px;
-  background: #1C7CCC;
+  backface-visibility: hidden;
+}
+
+.front {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  position: absolute;
+  border-radius: 5px;
+  backface-visibility: hidden;  
+  transform: rotateY(180deg);
 }
 
 .card.flip {
